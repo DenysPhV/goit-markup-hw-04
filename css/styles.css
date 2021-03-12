@@ -7,6 +7,8 @@
 /* Цвет текста в заголовках - #212121 */
 /* Цвет основного текста - #757575 */
 /* Цвет ссылок в спокойном состоянии - rgba(255, 255, 255, 0.6)*/
+/* фикс ширина max-width */
+/* Центрирование для секций margin */
 :root {
   --white-color: #ffffff;
   --black-color: #000000;
@@ -20,6 +22,9 @@
   --border-color: #eeeeee;
   --icon-border-color: #afb1b8;
   --rgba-link: rgba(255, 255, 255, 0.6);
+
+  --max-width: 1600px;
+  --margin: 0 auto;
 }
 
 body {
@@ -89,19 +94,31 @@ img {
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
+
+  max-width: var(--max-width);
+  margin: var(--margin);
 }
 
 .section-advantage {
   padding-top: 94px;
+
+  max-width: var(--max-width);
+  margin: var(--margin);
 }
 .section-hero {
   padding-top: 200px;
   padding-bottom: 200px;
+
+  max-width: var(--max-width);
+  margin: var(--margin);
 }
 
 .section-footer {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  max-width: var(--max-width);
+  margin: var(--margin);
 }
 
 /* Элемент для иконок наших приимуществ */
@@ -110,16 +127,29 @@ img {
   margin-bottom: 30px;
   background-color: var(--light-gray);
 
-  width: 270px;
-  height: 120px;
+  width: 100%;
+  height: 60%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* правило для оформления иконок соцсетей */
 .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 12px;
   border-radius: 50% 50%;
 
-  background-color: rgb(207, 33, 33);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-primary);
 }
 
 /* =========== END COMPONENTS =========== */
@@ -128,6 +158,9 @@ img {
 .header {
   border-bottom: solid 1px;
   border-color: var(--border-color-header);
+
+  max-width: var(--max-width);
+  margin: var(--margin);
 }
 
 .header .container {
@@ -168,6 +201,7 @@ img {
 .navigation-list {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .navigation-item:not(:last-child) {
@@ -201,11 +235,20 @@ img {
 
   padding-top: 20px;
   padding-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-header:hover,
-.contact-header:focus {
+.icon-mail:hover,
+.icon-tell:hover,
+.contact-header:focus,
+.icon-mail:focus,
+.icon-tell:focus {
   color: var(--accent-primary);
+  fill: var(--accent-primary);
 }
 
 .contact-item {
@@ -215,6 +258,20 @@ img {
 .contact {
   margin-left: auto;
 }
+
+.icon-mail {
+  width: 16px;
+  height: 12px;
+
+  margin-right: 10px;
+}
+.icon-tell {
+  width: 10px;
+  height: 16px;
+
+  margin-right: 10px;
+}
+
 .active-link {
   color: var(--accent-primary);
 }
@@ -229,13 +286,6 @@ img {
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/bg-hero.jpg);
-
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
-.hero .container {
-  text-align: center;
 }
 
 .hero-title {
@@ -300,12 +350,19 @@ img {
 .advantage-list {
   display: flex;
   margin-left: -30px;
+
+  width: 100%;
+  height: 50%;
 }
 
 .advantage-item {
   margin-left: 30px;
 }
 
+.advantage-icon {
+  width: 70px;
+  height: 70px;
+}
 /* ======== END ADVANTAGE SECTION ======== */
 
 /* ============ PASSION SECTION ============ */
@@ -357,6 +414,7 @@ img {
 }
 
 .team-inner {
+  width: 100%;
   padding: 30px 30px;
   text-align: center;
 
@@ -368,9 +426,20 @@ img {
 
 .social-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
   margin-top: 16px;
-  margin-bottom: 30px;
+}
+
+.team-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--icon-border-color);
+}
+
+.social-link:hover .team-icon,
+.social-link:focus .team-icon {
+  fill: var(--white-color);
 }
 
 /* ======== END TEAM SECTION ======== */
@@ -383,12 +452,13 @@ img {
 .clients-item {
   border: 2px solid var(--icon-border-color);
   border-radius: 4px;
+  /* падинг пока для виду */
   padding: 22px 41px;
 }
-/* пока просто подставка под иконки */
-.clients-link {
+
+/* .clients-link {
   outline: 1px solid black;
-}
+} */
 
 /* ======== END CLIENTS SECTION ======== */
 /* ============ FOOTER ============= */
@@ -448,6 +518,16 @@ img {
   margin-right: 10px;
 }
 
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--white-color);
+}
+
+.social-link:hover .footer-icon,
+.social-link:focus .footer-icon {
+  fill: var(--white-color);
+}
 /* ======= PORFOLIO PAGE =============== */
 
 /* ======= PORTFOLIO SECTION ======= */
