@@ -531,7 +531,6 @@ img {
 .footer-social-list {
   display: flex;
   margin-top: 20px;
-  margin-right: ;
 }
 
 .footer-social-item:not(:last-child) {
