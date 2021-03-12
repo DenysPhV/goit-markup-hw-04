@@ -53,6 +53,10 @@ img {
   display: block;
 }
 
+/* svg {
+  fill: currentColor;
+} */
+
 .link-nonstyle {
   text-decoration: none;
 }
@@ -359,10 +363,6 @@ img {
   margin-left: 30px;
 }
 
-.advantage-icon {
-  width: 70px;
-  height: 70px;
-}
 /* ======== END ADVANTAGE SECTION ======== */
 
 /* ============ PASSION SECTION ============ */
@@ -432,8 +432,6 @@ img {
 }
 
 .team-icon {
-  width: 20px;
-  height: 20px;
   fill: var(--icon-border-color);
 }
 
@@ -449,17 +447,29 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.clients-item {
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid var(--icon-border-color);
   border-radius: 4px;
-  /* падинг пока для виду */
-  padding: 22px 41px;
+
+  width: 170px;
+  height: 90px;
 }
 
-/* .clients-link {
-  outline: 1px solid black;
-} */
+.clients-link:hover {
+  border: 2px solid var(--accent-primary);
+}
 
+.client-icon {
+  fill: var(--icon-border-color);
+}
+
+.clients-link:hover .client-icon {
+  fill: var(--accent-primary);
+}
 /* ======== END CLIENTS SECTION ======== */
 /* ============ FOOTER ============= */
 
@@ -519,8 +529,6 @@ img {
 }
 
 .footer-icon {
-  width: 20px;
-  height: 20px;
   fill: var(--white-color);
 }
 
@@ -570,6 +578,8 @@ img {
 .btn-choose:focus {
   background-color: var(--accent-primary);
   color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .choose-list {
@@ -596,6 +606,18 @@ img {
   flex-basis: calc(100% / 3 - 30px);
   margin-top: 30px;
   margin-left: 30px;
+
+  /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16); */
+}
+
+.portfolio-link {
+  color: var(--main-text);
+}
+
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* ==== END COLLECTION PORTFOLIO ==== */
